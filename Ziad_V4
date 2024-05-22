@@ -14,7 +14,7 @@ getnamecallmethod = getnamecallmethod
 
 -- Variables
 
-local UiLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ziyzoo/ziyzoo/main/2"))()
+local UiLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ziyzoo/ziyzoo/main/1"))()
 
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
