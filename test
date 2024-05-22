@@ -46,18 +46,18 @@ local StrafeSpeed = 0
 local TargDotCircle = Drawing.new("Circle")
 TargDotCircle.Filled = true
 TargDotCircle.Thickness = 1
-TargDotCircle.Radius = 7
+TargDotCircle.Radius = 3
 
 local TargFovCircle = Drawing.new("Circle")
 TargFovCircle.Thickness = 1.5
 
 local TargTracerLine = Drawing.new("Line")
-TargTracerLine.Thickness = 2
+TargTracerLine.Thickness = 1.5
 
 local SelfDotCircle = Drawing.new("Circle")
 SelfDotCircle.Filled = true
 SelfDotCircle.Thickness = 1
-SelfDotCircle.Radius = 7
+SelfDotCircle.Radius = 3
 
 local SelfTracerLine = Drawing.new("Line")
 SelfTracerLine.Thickness = 2
@@ -143,21 +143,21 @@ local TargHighlight = Instance.new("Highlight", CoreGui)
 local CamHighlight = Instance.new("Highlight", CoreGui)
 
 local TargetAimbot = {
-	Enabled = false, 
-	Keybind = nil, 
+	Enabled = true, 
+	Keybind = Q, 
 
-	Prediction = nil, 
-	RealPrediction = nil, 
+	Prediction = 0.129, 
+	RealPrediction = 0.129, 
 
 	Resolver = false, 
 
-	JumpOffset = 0, 
-	RealJumpOffset = nil, 
+	JumpOffset = -2, 
+	RealJumpOffset = -2, 
 
 	HitParts = {"HumanoidRootPart"}, 
 	RealHitPart = nil, 
 
-	AutoPred = false, 
+	AutoPred = true, 
 	Notify = false, 
 
 	KoCheck = false, 
@@ -968,10 +968,10 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.123
 
 		elseif Ping < 80 then
-			TargetAimbot.RealPrediction = 0.129
+			TargetAimbot.RealPrediction = 0.128
 
 		elseif Ping < 90 then
-			TargetAimbot.RealPrediction = 0.128
+			TargetAimbot.RealPrediction = 0.129
 
 		elseif Ping < 100 then
 			TargetAimbot.RealPrediction = 0.1388
@@ -980,19 +980,19 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.141
 
 		elseif Ping < 120 then
-			TargetAimbot.RealPrediction = 0.144
+			TargetAimbot.RealPrediction = 0.146
 
 		elseif Ping < 130 then
-			TargetAimbot.RealPrediction = 0.157
+			TargetAimbot.RealPrediction = 0.154
 
 		elseif Ping < 140 then
-			TargetAimbot.RealPrediction = 0.122
+			TargetAimbot.RealPrediction = 0.164
 
 		elseif Ping < 150 then
-			TargetAimbot.RealPrediction = 0.152
+			TargetAimbot.RealPrediction = 0.171
 
 		elseif Ping < 160 then
-			TargetAimbot.RealPrediction = 0.163
+			TargetAimbot.RealPrediction = 0.177
 
 		elseif Ping < 170 then
 			TargetAimbot.RealPrediction = 0.192
