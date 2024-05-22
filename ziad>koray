@@ -947,7 +947,7 @@ RunService.Stepped:Connect(function()
 		local Ping = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
 
 		if Ping < 10 then
-			TargetAimbot.RealPrediction = 0.097
+			TargetAimbot.RealPrediction = 0.086
 
 		elseif Ping < 20 then
 			TargetAimbot.RealPrediction = 0.112
@@ -956,34 +956,34 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.115
 
 		elseif Ping < 40 then
-			TargetAimbot.RealPrediction = 0.125
-
-		elseif Ping < 50 then
 			TargetAimbot.RealPrediction = 0.122
 
+		elseif Ping < 50 then
+			TargetAimbot.RealPrediction = 0.124
+
 		elseif Ping < 60 then
-			TargetAimbot.RealPrediction = 0.123
-
-		elseif Ping < 70 then
-			TargetAimbot.RealPrediction = 0.123
-
-		elseif Ping < 80 then
-			TargetAimbot.RealPrediction = 0.125
-
-		elseif Ping < 90 then
 			TargetAimbot.RealPrediction = 0.126
 
+		elseif Ping < 70 then
+			TargetAimbot.RealPrediction = 0.129
+
+		elseif Ping < 80 then
+			TargetAimbot.RealPrediction = 0.139340
+
+		elseif Ping < 90 then
+			TargetAimbot.RealPrediction = 0.1553914
+
 		elseif Ping < 100 then
-			TargetAimbot.RealPrediction = 0.134
+			TargetAimbot.RealPrediction = 0.141987
 
 		elseif Ping < 110 then
 			TargetAimbot.RealPrediction = 0.14
 
 		elseif Ping < 120 then
-			TargetAimbot.RealPrediction = 0.141
+			TargetAimbot.RealPrediction = 0.144
 
 		elseif Ping < 130 then
-			TargetAimbot.RealPrediction = 0.154
+			TargetAimbot.RealPrediction = 0.157
 
 		elseif Ping < 140 then
 			TargetAimbot.RealPrediction = 0.164
