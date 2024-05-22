@@ -45,19 +45,19 @@ local StrafeSpeed = 0
 
 local TargDotCircle = Drawing.new("Circle")
 TargDotCircle.Filled = true
-TargDotCircle.Thickness = 1
-TargDotCircle.Radius = 3
+TargDotCircle.Thickness = 1.5
+TargDotCircle.Radius = 4
 
 local TargFovCircle = Drawing.new("Circle")
 TargFovCircle.Thickness = 1.5
 
 local TargTracerLine = Drawing.new("Line")
-TargTracerLine.Thickness = 1.5
+TargTracerLine.Thickness = 2
 
 local SelfDotCircle = Drawing.new("Circle")
 SelfDotCircle.Filled = true
-SelfDotCircle.Thickness = 1
-SelfDotCircle.Radius = 3
+SelfDotCircle.Thickness = 1.5
+SelfDotCircle.Radius = 4
 
 local SelfTracerLine = Drawing.new("Line")
 SelfTracerLine.Thickness = 2
@@ -968,19 +968,19 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.129
 
 		elseif Ping < 80 then
-			TargetAimbot.RealPrediction = 0.139340
+			TargetAimbot.RealPrediction = 0.1361
 
 		elseif Ping < 90 then
-			TargetAimbot.RealPrediction = 0.1553914
+			TargetAimbot.RealPrediction = 0.141
 
 		elseif Ping < 100 then
-			TargetAimbot.RealPrediction = 0.141987
+			TargetAimbot.RealPrediction = 0.143
 
 		elseif Ping < 110 then
-			TargetAimbot.RealPrediction = 0.14
+			TargetAimbot.RealPrediction = 0.146
 
 		elseif Ping < 120 then
-			TargetAimbot.RealPrediction = 0.144
+			TargetAimbot.RealPrediction = 0.151
 
 		elseif Ping < 130 then
 			TargetAimbot.RealPrediction = 0.157
