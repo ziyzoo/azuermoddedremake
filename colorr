@@ -22,7 +22,7 @@ library.theme = {
 	cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f", 
 	backgroundcolor = Color3.fromRGB(20, 20, 20), 
 	tabstextcolor = Color3.fromRGB(91, 140, 250), 
-	bordercolor = Color3.fromRGB(75, 207, 255), 
+	bordercolor = Color3.fromRGB(1, 72, 114), 
 	accentcolor = Color3.fromRGB(20, 20, 20), 
 	accentcolor2 = Color3.fromRGB(20, 135, 255), 
 	outlinecolor = Color3.fromRGB(49, 49, 49), 
@@ -34,7 +34,7 @@ library.theme = {
 	topcolor2 = Color3.fromRGB(12, 12, 12), 
 	buttoncolor = Color3.fromRGB(49, 49, 49), 
 	buttoncolor2 = Color3.fromRGB(29, 29, 29), 
-	itemscolor = Color3.fromRGB(188, 218, 241), 
+	itemscolor = Color3.fromRGB(10, 10, 30), 
 	itemscolor2 = Color3.fromRGB(255, 255, 255)
 }
 
