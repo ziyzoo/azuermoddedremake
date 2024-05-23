@@ -1,7 +1,7 @@
 
 
 
--- ziyzoo-ziad-remake-azuermodded-script
+-- ziyz0-ziad-remake-azuermodded-script
 
 repeat wait() until game:IsLoaded()
 
@@ -325,7 +325,7 @@ end
 
 -- Window
 
-local Actyrn = UiLib:CreateWindow("ZIYZ0_💫", Vector2.new(500, 600), Enum.KeyCode.RightShift)
+local Actyrn = UiLib:CreateWindow("2TAP.CC", Vector2.new(500, 600), Enum.KeyCode.RightShift)
 
 -- Tabs
 
@@ -970,10 +970,10 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.1388
 
 		elseif Ping < 90 then
-			TargetAimbot.RealPrediction = 0.141
+			TargetAimbot.RealPrediction = 0.14
 
 		elseif Ping < 100 then
-			TargetAimbot.RealPrediction = 0.144
+			TargetAimbot.RealPrediction = 0.141
 
 		elseif Ping < 110 then
 			TargetAimbot.RealPrediction = 0.148
