@@ -1,8 +1,7 @@
--- Credits to Elegant and Weda, the original script coders
 
--- If ur gonna put in vault / showcase, pls don't put the source code directly or loadstring, put the discord
 
--- DO NOT EDIT BELOW IF YOU DON'T KNOW WHAT YOU'RE DOING!!
+
+-- ziyzoo-ziad-remake-azuermodded-script
 
 repeat wait() until game:IsLoaded()
 
@@ -326,7 +325,7 @@ end
 
 -- Window
 
-local Actyrn = UiLib:CreateWindow("ziyzoo.cc", Vector2.new(500, 600), Enum.KeyCode.RightShift)
+local Actyrn = UiLib:CreateWindow("ZIYZ0_💫", Vector2.new(500, 600), Enum.KeyCode.RightShift)
 
 -- Tabs
 
@@ -950,37 +949,37 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.086
 
 		elseif Ping < 20 then
-			TargetAimbot.RealPrediction = 0.112
+			TargetAimbot.RealPrediction = 0.1111
 
 		elseif Ping < 30 then
-			TargetAimbot.RealPrediction = 0.115
+			TargetAimbot.RealPrediction = 0.12
 
 		elseif Ping < 40 then
-			TargetAimbot.RealPrediction = 0.122
-
-		elseif Ping < 50 then
-			TargetAimbot.RealPrediction = 0.122
-
-		elseif Ping < 60 then
-			TargetAimbot.RealPrediction = 0.123
-
-		elseif Ping < 70 then
 			TargetAimbot.RealPrediction = 0.124
 
+		elseif Ping < 50 then
+			TargetAimbot.RealPrediction = 0.126
+
+		elseif Ping < 60 then
+			TargetAimbot.RealPrediction = 0.13
+
+		elseif Ping < 70 then
+			TargetAimbot.RealPrediction = 0.138
+
 		elseif Ping < 80 then
-			TargetAimbot.RealPrediction = 0.129
+			TargetAimbot.RealPrediction = 0.1388
 
 		elseif Ping < 90 then
-			TargetAimbot.RealPrediction = 0.14
-
-		elseif Ping < 100 then
 			TargetAimbot.RealPrediction = 0.141
 
+		elseif Ping < 100 then
+			TargetAimbot.RealPrediction = 0.144
+
 		elseif Ping < 110 then
-			TargetAimbot.RealPrediction = 0.154
+			TargetAimbot.RealPrediction = 0.148
 
 		elseif Ping < 120 then
-			TargetAimbot.RealPrediction = 0.158
+			TargetAimbot.RealPrediction = 0.154
 
 		elseif Ping < 130 then
 			TargetAimbot.RealPrediction = 0.161
