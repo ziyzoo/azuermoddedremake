@@ -964,34 +964,34 @@ RunService.Stepped:Connect(function()
 			TargetAimbot.RealPrediction = 0.12713
 
 		elseif Ping < 70 then
-			TargetAimbot.RealPrediction = 0.129
+			TargetAimbot.RealPrediction = 0.137
 
 		elseif Ping < 80 then
-			TargetAimbot.RealPrediction = 0.141
+			TargetAimbot.RealPrediction = 0.1429
 
 		elseif Ping < 90 then
-			TargetAimbot.RealPrediction = 0.154
+			TargetAimbot.RealPrediction = 0.120689385
 
 		elseif Ping < 100 then
-			TargetAimbot.RealPrediction = 0.164
+			TargetAimbot.RealPrediction = 0.154
 
 		elseif Ping < 110 then
-			TargetAimbot.RealPrediction = 0.171
+			TargetAimbot.RealPrediction = 0.157
 
 		elseif Ping < 120 then
-			TargetAimbot.RealPrediction = 0.174
-
-		elseif Ping < 130 then
-			TargetAimbot.RealPrediction = 0.161
-
-		elseif Ping < 140 then
 			TargetAimbot.RealPrediction = 0.164
 
-		elseif Ping < 150 then
+		elseif Ping < 130 then
 			TargetAimbot.RealPrediction = 0.171
 
+		elseif Ping < 140 then
+			TargetAimbot.RealPrediction = 0.171
+
+		elseif Ping < 150 then
+			TargetAimbot.RealPrediction = 0.184
+
 		elseif Ping < 160 then
-			TargetAimbot.RealPrediction = 0.177
+			TargetAimbot.RealPrediction = 0.188
 
 		elseif Ping < 170 then
 			TargetAimbot.RealPrediction = 0.192
