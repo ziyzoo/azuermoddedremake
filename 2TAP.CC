@@ -1,15 +1,16 @@
+-- Credits to Elegant and Weda, the original script coders
 
+-- If ur gonna put in vault / showcase, pls don't put the source code directly or loadstring, put the discord
 
-
--- ziyz0-ziad-remake-azuermodded-script
+-- DO NOT EDIT BELOW IF YOU DON'T KNOW WHAT YOU'RE DOING!!
 
 repeat wait() until game:IsLoaded()
 
 Drawing = Drawing
 mousemoverel = mousemoverel
-hookmetamethod = hookmetamethod
-newcclosure = newcclosure
-getnamecallmethod = getnamecallmethod
+--hookmetamethod = hookmetamethod
+--newcclosure = newcclosure
+--getnamecallmethod = getnamecallmethod
 
 -- Variables
 
@@ -38,14 +39,14 @@ local TargResolvePos
 
 local Connections = {}
 
-local AntiCheatNamecall
+--local AntiCheatNamecall
 
 local StrafeSpeed = 0
 
 local TargDotCircle = Drawing.new("Circle")
 TargDotCircle.Filled = true
-TargDotCircle.Thickness = 1.5
-TargDotCircle.Radius = 4
+TargDotCircle.Thickness = 1
+TargDotCircle.Radius = 4.2
 
 local TargFovCircle = Drawing.new("Circle")
 TargFovCircle.Thickness = 1.5
@@ -55,32 +56,32 @@ TargTracerLine.Thickness = 2
 
 local SelfDotCircle = Drawing.new("Circle")
 SelfDotCircle.Filled = true
-SelfDotCircle.Thickness = 1.5
-SelfDotCircle.Radius = 4
+SelfDotCircle.Thickness = 1
+SelfDotCircle.Radius = 4.2
 
 local SelfTracerLine = Drawing.new("Line")
-SelfTracerLine.Thickness = 2
+SelfTracerLine.Thickness = 1.5
 
 local CamFovCircle = Drawing.new("Circle")
 CamFovCircle.Thickness = 1.5
 
 local CamTracerLine = Drawing.new("Line")
-CamTracerLine.Thickness = 2
+CamTracerLine.Thickness = 1.5
 
 local TargStats = Instance.new("ScreenGui", CoreGui)
-TargStats.Name = "ziyzoo"
+TargStats.Name = "Actyrn"
 TargStats.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local StatsFrame = Instance.new("Frame", TargStats)
-StatsFrame.Name = "ziyzoo"
-StatsFrame.BackgroundColor3 = Color3.fromRGB(151, 185, 255)
+StatsFrame.Name = "Actyrn"
+StatsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 StatsFrame.BorderSizePixel = 0
 StatsFrame.Position = UDim2.new(0.388957828, 0, 0.700122297, 0)
 StatsFrame.Size = UDim2.new(0, 360, 0, 70)
 
 local StatsTop = Instance.new("Frame", StatsFrame)
-StatsTop.Name = "ziyzoo"
-StatsTop.BackgroundColor3 = Color3.fromRGB(151, 185, 255)
+StatsTop.Name = "Actyrn"
+StatsTop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 StatsTop.BorderSizePixel = 0
 StatsTop.Position = UDim2.new(0, 0, -0.101449274, 0)
 StatsTop.Size = UDim2.new(0, 360, 0, 7.5)
@@ -91,15 +92,15 @@ StatsName.BackgroundTransparency = 1
 StatsName.Position = UDim2.new(0.220670387, 0, 0.0704225376, 0)
 StatsName.Size = UDim2.new(0, 270, 0, 20)
 StatsName.Font = Enum.Font.Code
-StatsName.TextColor3 = Color3.fromRGB(151, 185, 255)
+StatsName.TextColor3 = Color3.fromRGB(255, 255, 255)
 StatsName.TextScaled = true
 StatsName.TextSize = 15
 StatsName.TextStrokeTransparency = 0
 StatsName.TextWrapped = true
 
 local StatsPicture = Instance.new("ImageLabel", StatsFrame)
-StatsPicture.Name = "ziyzoo"
-StatsPicture.BackgroundColor3 = Color3.fromRGB(151, 185, 255)
+StatsPicture.Name = "Actyrn"
+StatsPicture.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 StatsPicture.BorderSizePixel = 0
 StatsPicture.Position = UDim2.new(0.0279329624, 0, 0.0704225376, 0)
 StatsPicture.Size = UDim2.new(0, 60, 0, 60)
@@ -107,34 +108,34 @@ StatsPicture.Transparency = 1
 StatsPicture.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
 
 local StatsHealthBackground = Instance.new("Frame", StatsFrame)
-StatsHealthBackground.Name = "ziyzoo"
-StatsHealthBackground.BackgroundColor3 = Color3.fromRGB(151, 185, 255)
+StatsHealthBackground.Name = "Actyrn"
+StatsHealthBackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 StatsHealthBackground.BorderSizePixel = 0
 StatsHealthBackground.Position = UDim2.new(0.215083793, 0, 0.348234326, 0)
 StatsHealthBackground.Size = UDim2.new(0, 270, 0, 20)
 StatsHealthBackground.Transparency = 1
 
 local StatsHealthBar = Instance.new("Frame", StatsHealthBackground)
-StatsHealthBar.Name = "ziyzoo"
-StatsHealthBar.BackgroundColor3 = Color3.fromRGB(151, 185, 255)
+StatsHealthBar.Name = "Actyrn"
+StatsHealthBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 StatsHealthBar.BorderSizePixel = 0
 StatsHealthBar.Position = UDim2.new(-0.00336122862, 0, 0.164894029, 0)
 StatsHealthBar.Size = UDim2.new(0, 130, 0, 20)
 
 local StatsGradient1 = Instance.new("UIGradient", StatsTop)
-StatsGradient1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(76, 144, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(215, 174, 159))}
+StatsGradient1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(185, 160, 230)), ColorSequenceKeypoint.new(1, Color3.fromRGB(100, 90, 155))}
 StatsGradient1.Rotation = 90
 
 local StatsGradient2 = Instance.new("UIGradient", StatsFrame)
-StatsGradient2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(56, 59, 67)), ColorSequenceKeypoint.new(1, Color3.fromRGB(44, 7, 55))}
+StatsGradient2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(50, 50, 50)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))}
 StatsGradient2.Rotation = 90
 
 local StatsGradient3 = Instance.new("UIGradient", StatsHealthBackground)
-StatsGradient3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(15, 19, 30)), ColorSequenceKeypoint.new(1, Color3.fromRGB(60, 121, 165))}
+StatsGradient3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(60, 60, 60)), ColorSequenceKeypoint.new(1, Color3.fromRGB(30, 30, 30))}
 StatsGradient3.Rotation = 90
 
 local StatsGradient4 = Instance.new("UIGradient", StatsHealthBar)
-StatsGradient4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(76, 144, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(97, 120, 206))}
+StatsGradient4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(185, 160, 230)), ColorSequenceKeypoint.new(1, Color3.fromRGB(100, 90, 155))}
 StatsGradient4.Rotation = 90
 
 local TargHighlight = Instance.new("Highlight", CoreGui)
@@ -142,21 +143,21 @@ local TargHighlight = Instance.new("Highlight", CoreGui)
 local CamHighlight = Instance.new("Highlight", CoreGui)
 
 local TargetAimbot = {
-	Enabled = true, 
-	Keybind = Q, 
+	Enabled = false, 
+	Keybind = nil, 
 
-	Prediction = 0.129, 
-	RealPrediction = 0.129, 
+	Prediction = nil, 
+	RealPrediction = nil, 
 
 	Resolver = false, 
 
-	JumpOffset = -2, 
-	RealJumpOffset = -2, 
+	JumpOffset = 0, 
+	RealJumpOffset = nil, 
 
 	HitParts = {"HumanoidRootPart"}, 
 	RealHitPart = nil, 
 
-	AutoPred = true, 
+	AutoPred = false, 
 	Notify = false, 
 
 	KoCheck = false, 
@@ -164,10 +165,10 @@ local TargetAimbot = {
 	LookAt = false, 
 	ViewAt = false, 
 
-	Dot = true, 
+	Dot = false, 
 	DotOnCursor = false, 
 
-	Tracer = true, 
+	Tracer = false, 
 
 	Highlight = false, 
 	Stats = false, 
@@ -198,7 +199,7 @@ local CameraAimbot = {
 	HitPart = "HumanoidRootPart", 
 	RealHitPart = nil, 
 
-	UseAirPart = true, 
+	UseAirPart = false, 
 	AirPart = "LowerTorso", 
 	AirCheckType = "Once in Air", 
 
@@ -426,11 +427,11 @@ local TargHighlightTog = TargetAimbotSec:AddToggle("Highlight", false, function(
 	TargetAimbot.Highlight = Value
 end, "TargetHighlight")
 
-TargHighlightTog:AddColorpicker(Color3.fromRGB(90, 120, 210), function(Value)
+TargHighlightTog:AddColorpicker(Color3.fromRGB(170, 120, 210), function(Value)
 	TargHighlight.FillColor = Value
 end, "TargetHighlightFillColor")
 
-TargHighlightTog:AddColorpicker(Color3.fromRGB(90, 140, 255), function(Value)
+TargHighlightTog:AddColorpicker(Color3.fromRGB(90, 65, 110), function(Value)
 	TargHighlight.OutlineColor = Value
 end, "TargetHighlightOutlineColor")
 
@@ -557,15 +558,9 @@ CamHighlightTog:AddColorpicker(Color3.fromRGB(90, 65, 110), function(Value)
 	CamHighlight.OutlineColor = Value
 end, "CameraHighlightOutlineColor")
 
-if game["PlaceId"] == 9825515356 then
-	CameraAimbotSec:AddDropdown("Aim Method", {"Camera", "Mouse"}, "Mouse", false, function(Value)
-		CameraAimbot.AimMethod = Value
-	end, "CameraAimMethod")
-else
-	CameraAimbotSec:AddDropdown("Aim Method", {"Camera", "Mouse"}, "Camera", false, function(Value)
-		CameraAimbot.AimMethod = Value
-	end, "CameraAimMethod")
-end
+CameraAimbotSec:AddDropdown("Aim Method", {"Camera", "Mouse"}, "Camera", false, function(Value)
+	CameraAimbot.AimMethod = Value
+end, "CameraAimMethod")
 
 CameraAimbotSec:AddToggle("Smoothing", false, function(Value)
 	CameraAimbot.Smoothing = Value
@@ -621,7 +616,29 @@ end, "AutoReload")
 
 local TrashTalkTog = UtilitiesSec:AddToggle("Trash Talk", false, function(Value)
 	if Value then
-		local TrashTalkWords = {"ziyzoo runs u", "kvs son", "FemboyAssPounder", "learn how to aim kiddo", "wow my little brother was playing and beat you", "Mobile player beat u Lol XD", "420 ping and u got SLAMMED", "ur bad", "pls get aim", "i own u son", "clown", "sonned", "LOLL UR BAD", "bro pls play other game u can even hit one shot", "u cant aim LOLLOL", "aired son spin", "my grandmas better than u :skull:", "hop off kid", "bro cannot aim", "u got absolutely DOGGED on", "i run you son", "what is bro doing", "one tap LOL"}
+		local TrashTalkWords = {
+			"gg/halalgaming", 
+			"gg/hUvujCnGMb", 
+			"How to aim pls help", 
+			"wow my little brother was playing and beat you :rofl:", 
+			"Mobile player beat u Lol XD", 
+			"420 ping and u got SLAMMED", 
+			"ur bad", 
+			"seed", 
+			"im not locking ur just bad", 
+			"clown", 
+			"sonned", 
+			"LOLL UR BAD", 
+			"dont even try.. ur not enough for the alpha", 
+			"ez", "gg = get good", 
+			"my grandmas better than u :skull:", 
+			"hop off kid", 
+			"bro cannot aim", 
+			"u got absolutely DOGGED on", 
+			"i run this server son", 
+			"what is bro doing :skull:", 
+			"no way u lost that"
+		}
 
 		ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TrashTalkWords[math.random(#TrashTalkWords)], "All")
 	end
@@ -946,52 +963,52 @@ RunService.Stepped:Connect(function()
 		local Ping = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
 
 		if Ping < 10 then
-			TargetAimbot.RealPrediction = 0.086
+			TargetAimbot.RealPrediction = 0.097
 
 		elseif Ping < 20 then
 			TargetAimbot.RealPrediction = 0.1111
 
 		elseif Ping < 30 then
-			TargetAimbot.RealPrediction = 0.12
+			TargetAimbot.RealPrediction = 0.118
 
 		elseif Ping < 40 then
-			TargetAimbot.RealPrediction = 0.124
+			TargetAimbot.RealPrediction = 0.122
 
 		elseif Ping < 50 then
-			TargetAimbot.RealPrediction = 0.126
+			TargetAimbot.RealPrediction = 0.125
 
 		elseif Ping < 60 then
-			TargetAimbot.RealPrediction = 0.12713
+			TargetAimbot.RealPrediction = 0.126
 
 		elseif Ping < 70 then
-			TargetAimbot.RealPrediction = 0.138
+			TargetAimbot.RealPrediction = 0.132
 
 		elseif Ping < 80 then
-			TargetAimbot.RealPrediction = 0.144
+			TargetAimbot.RealPrediction = 0.138
 
 		elseif Ping < 90 then
-			TargetAimbot.RealPrediction = 0.148
+			TargetAimbot.RealPrediction = 0.141
 
 		elseif Ping < 100 then
-			TargetAimbot.RealPrediction = 0.151
-
-		elseif Ping < 110 then
 			TargetAimbot.RealPrediction = 0.154
 
+		elseif Ping < 110 then
+			TargetAimbot.RealPrediction = 0.148
+
 		elseif Ping < 120 then
-			TargetAimbot.RealPrediction = 0.164
+			TargetAimbot.RealPrediction = 0.144
 
 		elseif Ping < 130 then
-			TargetAimbot.RealPrediction = 0.171
+			TargetAimbot.RealPrediction = 0.157
 
 		elseif Ping < 140 then
-			TargetAimbot.RealPrediction = 0.171
+			TargetAimbot.RealPrediction = 0.122
 
 		elseif Ping < 150 then
-			TargetAimbot.RealPrediction = 0.184
+			TargetAimbot.RealPrediction = 0.152
 
 		elseif Ping < 160 then
-			TargetAimbot.RealPrediction = 0.188
+			TargetAimbot.RealPrediction = 0.163
 
 		elseif Ping < 170 then
 			TargetAimbot.RealPrediction = 0.192
@@ -1101,22 +1118,22 @@ RunService.Stepped:Connect(function()
 			CameraAimbot.RealPrediction = 0.123
 
 		elseif Ping < 70 then
-			CameraAimbot.RealPrediction = 0.126
+			CameraAimbot.RealPrediction = 0.132
 
 		elseif Ping < 80 then
-			CameraAimbot.RealPrediction = 0.136
+			CameraAimbot.RealPrediction = 0.134
 
 		elseif Ping < 90 then
-			CameraAimbot.RealPrediction = 0.141
+			CameraAimbot.RealPrediction = 0.137
 
 		elseif Ping < 100 then
-			CameraAimbot.RealPrediction = 0.148
+			CameraAimbot.RealPrediction = 0.146
 
 		elseif Ping < 110 then
-			CameraAimbot.RealPrediction = 0.154
+			CameraAimbot.RealPrediction = 0.148
 
 		elseif Ping < 120 then
-			CameraAimbot.RealPrediction = 0.154
+			CameraAimbot.RealPrediction = 0.144
 
 		elseif Ping < 130 then
 			CameraAimbot.RealPrediction = 0.157
@@ -1404,7 +1421,7 @@ UserInputService.InputBegan:Connect(function(Key)
 
 			if TargetAimbot.Notify then
 				StarterGui:SetCore("SendNotification", {
-					Title = "ziyzoo.cc", 
+					Title = "Azure Modded [Actyrn]", 
 					Text = "Untargeting: " .. TargetPlr.DisplayName, 
 					Duration = 2.5
 				})
@@ -1416,7 +1433,7 @@ UserInputService.InputBegan:Connect(function(Key)
 
 				if TargetAimbot.Notify then
 					StarterGui:SetCore("SendNotification", {
-						Title = "ziyzoo.cc", 
+						Title = "Azure Modded [Actyrn]", 
 						Text = "Targeting: " .. TargetPlr.DisplayName, 
 						Duration = 2.5
 					})
@@ -1447,7 +1464,7 @@ UserInputService.InputBegan:Connect(function(Key)
 
 				if CameraAimbot.Notify then
 					StarterGui:SetCore("SendNotification", {
-						Title = "ziyzoo.cc", 
+						Title = "Azure Modded [Actyrn]", 
 						Text = "Targeting: " .. CamlockPlr.DisplayName, 
 						Duration = 2.5
 					})
@@ -1459,6 +1476,7 @@ end)
 
 -- Hookmetamethod functions
 
+--[[
 AntiCheatNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self, ...)
 	local Arguments = {...}
 	local AntiCheats = {"BreathingHAMON", "TeleportDetect", "JJARC", "TakePoisonDamage", "CHECKER_1", "CHECKER", "GUI_CHECK", "OneMoreTime", "checkingSPEED", "BANREMOTE", "PERMAIDBAN", "KICKREMOTE", "BR_KICKPC", "FORCEFIELD", "Christmas_Sock", "VirusCough", "Symbiote", "Symbioted", "RequestAFKDisplay"}
@@ -1469,3 +1487,4 @@ AntiCheatNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self
 
 	return AntiCheatNamecall(Self, ...)
 end))
+--]]
