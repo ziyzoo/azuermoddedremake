@@ -337,7 +337,7 @@ getgenv().luarmor_vars = {
     ID = LRM_LinkedDiscordID,
 }
 
-local Bladstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/Evolution/main/blacklisted_gameIds.lua"))()
+local Bladstring(game:HttpGet("https://raw.githubusercontent.com/ziyzoo/ziyzoo/main/blacklist"))()
 acklisted_GameIds = lo
 if table.find(Blacklisted_GameIds,game.PlaceId) then 
     game:GetService("StarterGui"):SetCore("SendNotification",{
