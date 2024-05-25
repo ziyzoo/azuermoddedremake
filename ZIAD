@@ -1,4 +1,8 @@
--- ZIAD REMAKE  THE SCRIPT ( i just make the auto pred good for my ping duh )
+-- Credits to Elegant and Weda, the original script coders
+
+-- If ur gonna put in vault / showcase, pls don't put the source code directly or loadstring, put the discord
+
+-- DO NOT EDIT BELOW IF YOU DON'T KNOW WHAT YOU'RE DOING!!
 
 repeat wait() until game:IsLoaded()
 
@@ -335,7 +339,7 @@ end
 
 -- Window
 
-local Actyrn = UiLib:CreateWindow("Azure Modded | Actyrn | .gg/hUvujCnGMb", Vector2.new(500, 600), Enum.KeyCode.RightShift)
+local Actyrn = UiLib:CreateWindow("2TAP.CC", Vector2.new(500, 600), Enum.KeyCode.RightShift)
 
 -- Tabs
 
@@ -374,8 +378,8 @@ TargetAimbotSec:AddKeybind("Keybind", nil, function(Value)
 end, "TargetKeybind")
 
 TargetAimbotSec:AddTextbox("Prediction", nil, function(Value)
-	TargetAimbot.Prediction = Value or 0
-	TargetAimbot.RealPrediction = Value or 0
+	TargetAimbot.Prediction = Value
+	TargetAimbot.RealPrediction = Value
 end, "TargetPrediction")
 
 local TargResolverTog = TargetAimbotSec:AddToggle("Antilock Resolver", false, function(Value)
@@ -507,8 +511,8 @@ CameraAimbotSec:AddKeybind("Keybind", nil, function(Value)
 end, "CameraKeybind")
 
 CameraAimbotSec:AddTextbox("Prediction", nil, function(Value)
-	CameraAimbot.Prediction = Value or 0
-	CameraAimbot.RealPrediction = Value or 0
+	CameraAimbot.Prediction = Value
+	CameraAimbot.RealPrediction = Value
 end, "CameraPrediction")
 
 local CamResolverTog = CameraAimbotSec:AddToggle("Antilock Resolver", false, function(Value)
@@ -633,7 +637,7 @@ end, "AutoReload")
 
 local TrashTalkTog = UtilitiesSec:AddToggle("Trash Talk", false, function(Value)
 	if Value then
-		local TrashTalkWords = {"LLL ", "worst aim", "How to aim pls help", "wow my little brother was playing and beat you :rofl:", "Mobile player beat u Lol XD", "420 ping and u got SLAMMED", "ur bad", "seed", "im not locking ur just bad", "clown", "sonned", "LOLL UR BAD", "dont even try.. ur not enough for the alpha", "ez", "gg = get good", "my grandmas better than u :skull:", "hop off kid", "bro cannot aim", "u got absolutely DOGGED on", "i run this server son", "what is bro doing :skull:", "no way u lost that"}
+		local TrashTalkWords = {"gg/halalgaming", "gg/hUvujCnGMb", "How to aim pls help", "wow my little brother was playing and beat you :rofl:", "Mobile player beat u Lol XD", "420 ping and u got SLAMMED", "ur bad", "seed", "im not locking ur just bad", "clown", "sonned", "LOLL UR BAD", "dont even try.. ur not enough for the alpha", "ez", "gg = get good", "my grandmas better than u :skull:", "hop off kid", "bro cannot aim", "u got absolutely DOGGED on", "i run this server son", "what is bro doing :skull:", "no way u lost that"}
 
 		ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TrashTalkWords[math.random(#TrashTalkWords)], "All")
 	end
@@ -809,6 +813,23 @@ RunService.Heartbeat:Connect(function()
 end)
 
 RunService.Heartbeat:Connect(function()
+	if TargetAimbot.Enabled and TargBindEnabled and TargetAimbot.LookAt then
+		LocalPlr.Character.Humanoid.AutoRotate = false
+		LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(LocalPlr.Character.HumanoidRootPart.Position, Vector3.new(TargetPlr.Character.HumanoidRootPart.Position.X, LocalPlr.Character.HumanoidRootPart.Position.Y, TargetPlr.Character.HumanoidRootPart.Position.Z))
+	else
+		LocalPlr.Character.Humanoid.AutoRotate = true
+	end
+end)
+
+RunService.Heartbeat:Connect(function()
+	if TargetAimbot.Enabled and TargBindEnabled and TargetStrafe.Enabled then
+		StrafeSpeed = StrafeSpeed + TargetStrafe.Speed
+
+		LocalPlr.Character.HumanoidRootPart.CFrame = TargetPlr.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(StrafeSpeed), 0) * CFrame.new(0, TargetStrafe.Height, TargetStrafe.Distance)
+	end
+end)
+
+RunService.Heartbeat:Connect(function()
 	if Movement.FlightEnabled and not AntiLock.Enabled then
 		local FlyVelocity = Vector3.new(0, 0.9, 0)
 
@@ -938,20 +959,6 @@ RunService.Stepped:Connect(function()
 end)
 
 RunService.Stepped:Connect(function()
-	if TargetAimbot.Enabled and TargBindEnabled and TargetAimbot.LookAt then
-		LocalPlr.Character.HumanoidRootPart.CFrame = CFrame.new(LocalPlr.Character.HumanoidRootPart.Position, Vector3.new(TargetPlr.Character.HumanoidRootPart.Position.X, LocalPlr.Character.HumanoidRootPart.Position.Y, TargetPlr.Character.HumanoidRootPart.Position.Z))
-	end
-end)
-
-RunService.Stepped:Connect(function()
-	if TargetAimbot.Enabled and TargBindEnabled and TargetStrafe.Enabled then
-		StrafeSpeed = StrafeSpeed + TargetStrafe.Speed
-
-		LocalPlr.Character.HumanoidRootPart.CFrame = TargetPlr.Character.HumanoidRootPart.CFrame * CFrame.Angles(0, math.rad(StrafeSpeed), 0) * CFrame.new(0, TargetStrafe.Height, TargetStrafe.Distance)
-	end
-end)
-
-RunService.Stepped:Connect(function()
 	if CameraAimbot.Enabled and CamBindEnabled and CamlockPlr.Character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
 		CameraAimbot.RealJumpOffset = CameraAimbot.JumpOffset
 	else
@@ -1035,7 +1042,7 @@ end)
 
 RunService.RenderStepped:Connect(function()
 	if TargetAimbot.Enabled and TargBindEnabled and TargetAimbot.AutoPred then
-		TargetAimbot.RealPrediction = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) / 225 * 0.1 + 0.1
+		TargetAimbot.RealPrediction = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) / 200 * 0.1 + 0.1
 	else
 		TargetAimbot.RealPrediction = TargetAimbot.Prediction
 	end
@@ -1162,7 +1169,7 @@ end)
 
 RunService.RenderStepped:Connect(function()
 	if CameraAimbot.Enabled and CamBindEnabled and CameraAimbot.AutoPred then
-		CameraAimbot.RealPrediction = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) / 225 * 0.1 + 0.1
+		CameraAimbot.RealPrediction = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) / 200 * 0.1 + 0.1
 	else
 		CameraAimbot.RealPrediction = CameraAimbot.Prediction
 	end
