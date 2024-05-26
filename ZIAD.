@@ -45,7 +45,7 @@ local StrafeSpeed = 0
 local TargDotCircle = Drawing.new("Circle")
 TargDotCircle.Filled = true
 TargDotCircle.Thickness = 1
-TargDotCircle.Radius = 7
+TargDotCircle.Radius = 4
 
 local TargFovCircle = Drawing.new("Circle")
 TargFovCircle.Thickness = 1.5
@@ -56,7 +56,7 @@ TargTracerLine.Thickness = 2
 local SelfDotCircle = Drawing.new("Circle")
 SelfDotCircle.Filled = true
 SelfDotCircle.Thickness = 1
-SelfDotCircle.Radius = 7
+SelfDotCircle.Radius = 4
 
 local SelfTracerLine = Drawing.new("Line")
 SelfTracerLine.Thickness = 2
@@ -392,7 +392,7 @@ TargetAimbotSec:AddDropdown("Resolver Type", {"Recalculate", "MoveDirection"}, "
 	TargetAimbot.ResolverType = Value
 end, "TargetResolverType")
 
-TargetAimbotSec:AddSlider("Jump Offset", -1, 0, 1, 100, function(Value)
+TargetAimbotSec:AddSlider("Jump Offset", -2, 0, 2, 200, function(Value)
 	TargetAimbot.JumpOffset = Value
 	TargetAimbot.RealJumpOffset = Value
 end, "TargetJumpOffset")
@@ -525,7 +525,7 @@ CameraAimbotSec:AddDropdown("Resolver Type", {"Recalculate", "MoveDirection"}, "
 	CameraAimbot.ResolverType = Value
 end, "CameraResolverType")
 
-CameraAimbotSec:AddSlider("Jump Offset", -1, 0, 1, 100, function(Value)
+CameraAimbotSec:AddSlider("Jump Offset", -2, 0, 2, 200, function(Value)
 	CameraAimbot.JumpOffset = Value
 	CameraAimbot.RealJumpOffset = Value
 end, "CameraJumpOffset")
@@ -637,7 +637,7 @@ end, "AutoReload")
 
 local TrashTalkTog = UtilitiesSec:AddToggle("Trash Talk", false, function(Value)
 	if Value then
-		local TrashTalkWords = {"gg/halalgaming", "gg/hUvujCnGMb", "How to aim pls help", "wow my little brother was playing and beat you :rofl:", "Mobile player beat u Lol XD", "420 ping and u got SLAMMED", "ur bad", "seed", "im not locking ur just bad", "clown", "sonned", "LOLL UR BAD", "dont even try.. ur not enough for the alpha", "ez", "gg = get good", "my grandmas better than u :skull:", "hop off kid", "bro cannot aim", "u got absolutely DOGGED on", "i run this server son", "what is bro doing :skull:", "no way u lost that"}
+		local TrashTalkWords = {"ur so bad", "my grandma better than u fr", "How to aim pls help", "wow my little brother was playing and beat you :rofl:", "Mobile player beat u Lol XD", "420 ping and u got SLAMMED", "ur bad", "seed", "im not locking ur just bad", "clown", "sonned", "LOLL UR BAD", "dont even try.. ur not enough for the alpha", "ez", "gg = get good", "my grandmas better than u :skull:", "hop off kid", "bro cannot aim", "u got absolutely DOGGED on", "i run this server son", "what is bro doing :skull:", "no way u lost that"}
 
 		ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TrashTalkWords[math.random(#TrashTalkWords)], "All")
 	end
@@ -1235,7 +1235,7 @@ UserInputService.InputBegan:Connect(function(Key)
 
 			if TargetAimbot.Notify then
 				StarterGui:SetCore("SendNotification", {
-					Title = "Azure Modded [Actyrn]", 
+					Title = "NIGGER", 
 					Text = "Untargeting: " .. TargetPlr.DisplayName, 
 					Duration = 2.5
 				})
