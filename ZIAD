@@ -392,7 +392,7 @@ TargetAimbotSec:AddDropdown("Resolver Type", {"Recalculate", "MoveDirection"}, "
 	TargetAimbot.ResolverType = Value
 end, "TargetResolverType")
 
-TargetAimbotSec:AddSlider("Jump Offset", -2, 0, 2, 200, function(Value)
+TargetAimbotSec:AddSlider("Jump Offset", -5, 0, 5, 100, function(Value)
 	TargetAimbot.JumpOffset = Value
 	TargetAimbot.RealJumpOffset = Value
 end, "TargetJumpOffset")
@@ -525,7 +525,7 @@ CameraAimbotSec:AddDropdown("Resolver Type", {"Recalculate", "MoveDirection"}, "
 	CameraAimbot.ResolverType = Value
 end, "CameraResolverType")
 
-CameraAimbotSec:AddSlider("Jump Offset", -2, 0, 2, 200, function(Value)
+CameraAimbotSec:AddSlider("Jump Offset", -5, 0, 5, 100, function(Value)
 	CameraAimbot.JumpOffset = Value
 	CameraAimbot.RealJumpOffset = Value
 end, "CameraJumpOffset")
