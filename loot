@@ -3,14 +3,14 @@ if not LPH_OBFUSCATED then -- if obfuscated then just remove this
         ['Options'] = {
             ['Notifications'] = false,
             ['FOVMode'] = "Sticky" , --// Sticky and FollowMouse
-            ['MuteBoomBox'] = false,
+            ['MuteBoomBox'] = true,
             ['AutoLowGfx'] = false,
             ['RemoveSeats'] = false,
         },
         ['AimAssist'] = {
             ['Main'] = {
                 ['Enabled'] = true,
-                ['Key'] = "q",
+                ['Key'] = "Q",
                 ['SmoothLock'] = true,
                 ['Smoothness'] = 0.28,
                 ['PredictMovement'] = false,
@@ -22,7 +22,7 @@ if not LPH_OBFUSCATED then -- if obfuscated then just remove this
             ['FOV'] = {
                 ['UseFOV'] = true,
                 ['ShowFOV'] = false,
-                ['Radius'] = 70,
+                ['Radius'] = 120,
                 ['Color'] = Color3.fromRGB(255, 255, 255),
                 ['Filled'] = false,
                 ['Transparency'] = 0.4
@@ -57,23 +57,23 @@ if not LPH_OBFUSCATED then -- if obfuscated then just remove this
             ['Visible'] = false
         },
         ['Extra'] = {
-            ['TrashTalk'] = true
+            ['TrashTalk'] = false
         },
         ['CFrame'] = {
-            ['Enabled'] = true,
-            ['Toggle'] = "c"
+            ['Enabled'] = false,
+            ['Toggle'] = "V"
         },
         ['Desync'] = {
             ['Enabled'] = false,
-            ['Key'] = Enum.KeyCode.=,
+            ['Key'] = Enum.KeyCode.X,
             ['DirectionToShoot'] = "Behind"
         },
         ['Visuals'] = {
-            ['DistanceESP'] = true,
+            ['DistanceESP'] = false,
             ['WeaponESP'] = false,
-            ['HealthBar'] = true,
+            ['HealthBar'] = false,
             ['NameESP'] = false,
-            ['Radar'] = true
+            ['Radar'] = false
         },
         ['Texture'] = {
             ['Enabled'] = false,
@@ -82,7 +82,7 @@ if not LPH_OBFUSCATED then -- if obfuscated then just remove this
         },
         ['WaterMark'] = {
             ['Enabled'] = false,
-            ['ShowFPS'] = true
+            ['ShowFPS'] = false
         },
         ['PingPrediction'] = { -- *REWRITE* Current sets are Bad
             ['Enabled'] = true,
